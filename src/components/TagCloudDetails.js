@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import TagCloudDetailsInfo from './TagCloudDetailsInfo'
 
 const TagCloudDetails = ({match, tagCloud}) => {
-    const tag = tagCloud[match.params.tagId];
+    const decodedTagId = decodeURIComponent(match.params.tagId);
+    const tag = tagCloud[decodedTagId];
     return (
         <div className="container">
             <br/>

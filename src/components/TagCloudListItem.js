@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 
 const TagCloudListItem = ({label, height, id}) => (
     <Link
-        to={`/details/${id}`}
+        // We need to encode id to treat special characters (e. g. "/") as plain text, not as nested routes.
+        to={`/details/${encodeURIComponent(id)}`}
         className="card bg-light text-dark"
         style={{height, paddingLeft: '10px'}}
     >
