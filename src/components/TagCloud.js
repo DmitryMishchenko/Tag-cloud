@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import TagCloudList from './TagCloudList';
 import TagCloudDetails from './TagCloudDetails';
+import {loadTagCloudData} from '../actions/tagCloud';
 
 class TagCloud extends React.Component {
     componentDidMount() {
-        console.log('TagCloud is mount');
+        this.props.loadTagCloudData();
     }
 
     render() {
@@ -19,4 +21,5 @@ class TagCloud extends React.Component {
     }
 }
 
-export default TagCloud;
+
+export default connect(null, {loadTagCloudData})(TagCloud);
