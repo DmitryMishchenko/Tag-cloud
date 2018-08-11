@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import TagCloudList from './TagCloudList';
 import TagCloudDetails from './TagCloudDetails';
@@ -21,5 +22,8 @@ class TagCloud extends React.Component {
     }
 }
 
+TagCloud.propTypes = {
+    loadTagCloudData: PropTypes.func.isRequired
+};
 
 export default connect(null, {loadTagCloudData})(TagCloud);
