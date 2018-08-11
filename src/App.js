@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import TopBar from './components/TopBar';
+import TagCloud from './components/TagCloud';
 
-class App extends Component {
-  render() {
-    return (
-      <h1>Tag Cloud</h1>
-    );
-  }
-}
+const App = () => (
+    <React.Fragment>
+        <TopBar />
+        <TagCloud />
+    </React.Fragment>
+);
 
 export default App;
