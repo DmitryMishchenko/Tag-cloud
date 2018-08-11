@@ -1,0 +1,1 @@
+export const FETCH_TAG_CLOUD_DATA = 'FETCH_TAG_CLOUD_DATA';
