@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import TagCloudListItem from './TagCloudListItem';
 
+const normalizeScore = score => Math.floor(Math.pow(score, 2 / 3)) + 10;
+
 const TagCloudList = ({tagCloud}) => (
     <div className="container">
         <br/>
@@ -11,17 +13,18 @@ const TagCloudList = ({tagCloud}) => (
         <h1>Tag Cloud List</h1>
 
         <br/>
+        <div style={{lineHeight: '1.2'}}>
 
-        {Object.values(tagCloud).map(tag => (
-            <React.Fragment key={tag.id}>
+            {Object.values(tagCloud).map(tag => (
                 <TagCloudListItem
+                    key={tag.id}
                     id={tag.id}
                     label={tag.label}
-                    height={`${tag.sentimentScore}px`}
+                    fontSize={`${normalizeScore(tag.sentimentScore)}px`}
                 />
-                <br />
-            </React.Fragment>
-        ))}
+            ))}
+
+        </div>
     </div>
 );
 
